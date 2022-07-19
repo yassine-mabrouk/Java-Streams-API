@@ -17,6 +17,11 @@ public class Filtering {
     @Test
     public void filter() throws Exception {
         List<Car> cars = MockData.getCars();
+        List<Car> fileringCars  = cars.stream()
+                .filter(car -> car.getPrice() < 20000 )
+                .filter(car -> car.getMake().equals("Nissan"))
+                .limit(10)
+                .collect(Collectors.toList());
     }
 
     @Test

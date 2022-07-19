@@ -35,8 +35,7 @@ public class GettingStarted {
     @Test
     public void declarativeApproachUsingStreams() throws Exception {
         List<Person> people = MockData.getPeople();
-        List<Person> result = new ArrayList<>();
-        result=  people.stream().filter(p -> p.getAge() < 5).limit(3).collect(Collectors.toList());
+        List<Person> result =  people.stream().filter(p -> p.getAge() < 5).limit(3).collect(Collectors.toList());
         result.forEach(System.out::println);
     }
 }
